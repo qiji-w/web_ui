@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Framework of web UI
 
 ## selenium + pytest + allure + po
@@ -299,4 +300,6 @@ class TestDemo:
 
 3.xxx
 
+=======
+>>>>>>> 6cf55d52c0f0dd273e8903d1ba195d2e497645df
 

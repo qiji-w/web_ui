@@ -215,16 +215,17 @@ class TestOpBoard:
 **新增case**
 
 page页面
+
 ```python
 from conf.op_conf.conf import board_module_path
 
+
 class BoardPage(ElementDesign):
+  _path = board_module_path
 
-    _path = board_module_path
-
-    def input_content_in_input(self, content):
-        pass
-        return self
+  def input_content_in_input(self, content):
+    pass
+    return self
 ```
 首页page
 ```python

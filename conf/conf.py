@@ -11,6 +11,10 @@ MYSQL_PATH = os.path.join(auto, "conf", "mysql.ini")
 USER_PATH = os.path.join(auto, "conf", "user.ini")
 PYTEST_PATH = os.path.join(auto, "pytest.ini")
 
+ALLUREREPORT = os.path.join(auto, "allure_report")
+LOG = os.path.join(auto, "log")
+ERROR_IMAGE = os.path.join(auto, "error_image")
+REPORT = os.path.join(auto, "report")
 
 base_url = "https://www.baidu.com/"
 op_username = ""

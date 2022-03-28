@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*- #
+import shutil
 import sys
 import os
 import time
@@ -8,11 +9,34 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 project_dir = os.path.dirname(os.path.dirname(__file__))
-
 if project_dir not in sys.path:
     sys.path.append(project_dir)
 
+from conf.conf import ALLUREREPORT, ERROR_IMAGE, REPORT, LOG
+from util import util
+
 browser = 'chrome'
+
+
+@pytest.fixture(scope="session", autouse=True)
+def global_init():
+    # if util.count_dir_file(dir_path=LOG):
+    #     shutil.rmtree(LOG)
+    #     os.mkdir(LOG)
+    # else:
+    #     os.mkdir(LOG)
+
+    if util.count_dir_file(dir_path=ERROR_IMAGE):
+        shutil.rmtree(ERROR_IMAGE)
+        os.mkdir(ERROR_IMAGE)
+    else:
+        os.mkdir(ERROR_IMAGE)
+
+    if util.count_dir_file(dir_path=REPORT):
+        shutil.rmtree(REPORT)
+        os.mkdir(REPORT)
+    else:
+        os.mkdir(REPORT)
 
 
 @pytest.fixture(scope='session')

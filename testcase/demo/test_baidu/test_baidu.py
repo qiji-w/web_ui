@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*- #
-import time
 
 import allure
 import pytest
@@ -27,5 +26,3 @@ class TestDemo:
             board.screen_shot_file(desc=f"demo错误")
             raise e
 
-if __name__ == '__main__':
-    pytest.main(["-s", "-v"])

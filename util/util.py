@@ -86,6 +86,20 @@ def element_add_screen_and_log(func):
     return wrapper
 
 
+# 查看文件/文件夹是否存在
+def count_dir_file(file_path=None, dir_path=None):
+    if file_path:
+        if os.path.isfile(file_path):
+            return True
+        else:
+            return False
+    if dir_path:
+        if os.path.isdir(dir_path):
+            return True
+        else:
+            return False
+
+
 # 获取当前时间
 def get_current_date():
     return time.strftime('%Y%m%d', time.localtime(time.time()))
@@ -730,4 +744,3 @@ class GetOpCookies:
         self._get_cookie_from_redirect(qa_base_url + '/authorize', qa_base_url)
         cookies = dict(self.session.cookies)
         return self._cookie_format(cookies, qa_base_url)
-
